@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <rect width="64" height="64" rx="12" fill="#2c3e50"/>
+  
+  <!-- Markdown "M" Symbol -->
+  <path d="M16 20h8l6 8 6-8h8v24h-8V32l-6 8-6-8v12h-8V20z" fill="#ffffff"/>
+  
+  <!-- Down Arrow (Markdown Symbol) -->
+  <path d="M48 38v6h-8l10 10 10-10h-8v-6h-4z" fill="#5d9cec" opacity="0.9"/>
+</svg>
