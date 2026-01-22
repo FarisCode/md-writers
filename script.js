@@ -180,22 +180,12 @@ function syncPreviewScroll() {
 }
 
 /**
- * Syncs editor scroll with preview scroll
+ * Syncs editor scroll with preview scroll (disabled - editor doesn't auto-scroll)
  */
 function syncEditorScroll() {
-    if (state.isScrolling || !state.showPreview) return;
-    
-    state.isScrolling = true;
-    
-    const previewScrollPercent = elements.preview.scrollTop / (elements.preview.scrollHeight - elements.preview.clientHeight);
-    const editorScrollTop = previewScrollPercent * (elements.editor.scrollHeight - elements.editor.clientHeight);
-    
-    elements.editor.scrollTop = editorScrollTop;
-    
-    clearTimeout(state.scrollTimeout);
-    state.scrollTimeout = setTimeout(() => {
-        state.isScrolling = false;
-    }, 150);
+    // Disabled: Editor should never auto-scroll
+    // Only preview scrolls based on editor position
+    return;
 }
 
 /**
@@ -230,16 +220,40 @@ function highlightCurrentElement() {
     if (closestElement) {
         closestElement.classList.add('highlight');
         
-        // Optionally scroll the highlighted element into view (with smooth behavior)
+        // Smooth, natural scrolling - only scroll if element is approaching edges
         if (!state.isScrolling) {
             const elementTop = closestElement.offsetTop;
-            const elementHeight = closestElement.offsetHeight;
-            const previewHeight = elements.preview.clientHeight;
+            const elementBottom = elementTop + closestElement.offsetHeight;
             const previewScrollTop = elements.preview.scrollTop;
+            const previewHeight = elements.preview.clientHeight;
+            const previewScrollBottom = previewScrollTop + previewHeight;
             
-            // Check if element is not in view
-            if (elementTop < previewScrollTop || elementTop + elementHeight > previewScrollTop + previewHeight) {
-                closestElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Define comfortable margins (20% from top and bottom)
+            const topMargin = previewHeight * 0.2;
+            const bottomMargin = previewHeight * 0.8;
+            
+            // Calculate target scroll position for natural following
+            let targetScroll = null;
+            
+            // If element is above the comfortable zone, scroll up gently
+            if (elementTop < previewScrollTop + topMargin) {
+                targetScroll = elementTop - topMargin;
+            }
+            // If element is below the comfortable zone, scroll down gently
+            else if (elementBottom > previewScrollTop + bottomMargin) {
+                targetScroll = elementBottom - bottomMargin;
+            }
+            
+            // Apply smooth, gradual scroll
+            if (targetScroll !== null) {
+                // Clamp to valid scroll range
+                targetScroll = Math.max(0, Math.min(targetScroll, elements.preview.scrollHeight - previewHeight));
+                
+                // Use smooth scrolling for natural movement
+                elements.preview.scrollTo({
+                    top: targetScroll,
+                    behavior: 'smooth'
+                });
             }
         }
     }
