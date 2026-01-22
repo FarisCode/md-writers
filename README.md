@@ -9,7 +9,7 @@ A clean, professional Markdown editor with Arabic/RTL support and real-time prev
 - 🌐 **Arabic/RTL Support** - Full support for right-to-left languages
 - 🌙 **Dark/Light Theme** - Toggle between professional dark and light modes
 - 💾 **Auto-save** - Your work is automatically saved to browser storage
-- 📥 **Export** - Download your work as .md files
+- 📥 **Export** - Download as Markdown (.md) or PDF (.pdf)
 - 📊 **Word & Character Count** - Track your writing progress
 
 ### Design Philosophy
@@ -19,11 +19,26 @@ A clean, professional Markdown editor with Arabic/RTL support and real-time prev
 - **Distraction-free** - No unnecessary visual noise
 
 ### Keyboard Shortcuts
-- `Cmd/Ctrl + S` - Download markdown file
+
+**Application Controls:**
+- `Cmd/Ctrl + S` - Download as Markdown
+- `Cmd/Ctrl + P` - Download as PDF
 - `Cmd/Ctrl + E` - Toggle preview panel
 - `Cmd/Ctrl + D` - Toggle RTL/LTR mode
 - `Cmd/Ctrl + T` - Toggle dark/light theme
 - `Tab` - Insert indentation (2 spaces)
+
+**Formatting Shortcuts:**
+- `Cmd/Ctrl + B` - **Bold**
+- `Cmd/Ctrl + I` - *Italic*
+- `Cmd/Ctrl + Shift + X` - ~~Strikethrough~~
+- `Cmd/Ctrl + K` - `Inline code`
+- `Cmd/Ctrl + Shift + K` - Code block
+- `Cmd/Ctrl + L` - Insert link
+- `Cmd/Ctrl + Shift + I` - Insert image
+- `Cmd/Ctrl + Shift + U` - Unordered list
+- `Cmd/Ctrl + Shift + O` - Ordered list
+- `Cmd/Ctrl + Q` - Quote
 
 ## Technical Stack
 
