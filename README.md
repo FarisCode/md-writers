@@ -21,12 +21,19 @@ A clean, professional Markdown editor with Arabic/RTL support and real-time prev
 ### Keyboard Shortcuts
 
 **Application Controls:**
+- `Cmd/Ctrl + F` - Open search
+- `Cmd/Ctrl + H` - Open search & replace
 - `Cmd/Ctrl + S` - Download as Markdown
 - `Cmd/Ctrl + P` - Download as PDF
 - `Cmd/Ctrl + E` - Toggle preview panel
 - `Cmd/Ctrl + D` - Toggle RTL/LTR mode
 - `Cmd/Ctrl + T` - Toggle dark/light theme
 - `Tab` - Insert indentation (2 spaces)
+
+**Search & Replace:**
+- `Enter` - Next match
+- `Shift + Enter` - Previous match
+- `Esc` - Close search panel
 
 **Formatting Shortcuts:**
 - `Cmd/Ctrl + B` - **Bold**
