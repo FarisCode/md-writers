@@ -135,12 +135,6 @@ function renderPreview(markdown) {
             
             // Restore scroll position
             elements.preview.scrollTop = scrollTop;
-            
-            // Add data attributes for sync scrolling
-            addLineNumbersToPreview();
-            
-            // Highlight current element after update
-            setTimeout(highlightCurrentElement, 10);
         }
     } catch (error) {
         console.error('Markdown parsing error:', error);
@@ -1027,13 +1021,8 @@ elements.editor.addEventListener('input', () => {
 // Editor scroll sync
 elements.editor.addEventListener('scroll', syncPreviewScroll);
 
-// Preview scroll sync
+// Preview scroll sync (disabled - editor doesn't auto-scroll)
 elements.preview.addEventListener('scroll', syncEditorScroll);
-
-// Editor cursor/selection change for highlighting
-elements.editor.addEventListener('click', highlightCurrentElement);
-elements.editor.addEventListener('keyup', highlightCurrentElement);
-elements.editor.addEventListener('selectionchange', highlightCurrentElement);
 
 // Editor tab handling
 elements.editor.addEventListener('keydown', handleTab);

@@ -517,40 +517,6 @@ body {
     font-weight: 600;
     line-height: 1.3;
     color: var(--text-primary);
-    transition: background-color 0.3s ease;
-}
-
-.preview h1.highlight,
-.preview h2.highlight,
-.preview h3.highlight,
-.preview h4.highlight,
-.preview h5.highlight,
-.preview h6.highlight,
-.preview p.highlight,
-.preview ul.highlight,
-.preview ol.highlight,
-.preview blockquote.highlight,
-.preview pre.highlight,
-.preview table.highlight {
-    background-color: rgba(93, 156, 236, 0.1);
-    border-radius: var(--radius-sm);
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
-}
-
-[data-theme="dark"] .preview h1.highlight,
-[data-theme="dark"] .preview h2.highlight,
-[data-theme="dark"] .preview h3.highlight,
-[data-theme="dark"] .preview h4.highlight,
-[data-theme="dark"] .preview h5.highlight,
-[data-theme="dark"] .preview h6.highlight,
-[data-theme="dark"] .preview p.highlight,
-[data-theme="dark"] .preview ul.highlight,
-[data-theme="dark"] .preview ol.highlight,
-[data-theme="dark"] .preview blockquote.highlight,
-[data-theme="dark"] .preview pre.highlight,
-[data-theme="dark"] .preview table.highlight {
-    background-color: rgba(93, 156, 236, 0.15);
 }
 
 .preview h1 {
@@ -572,7 +538,6 @@ body {
 
 .preview p {
     margin-bottom: 1em;
-    transition: background-color 0.3s ease;
 }
 
 .preview a {
@@ -604,7 +569,6 @@ body {
 .preview ol {
     margin-bottom: 1em;
     padding-left: 2em;
-    transition: background-color 0.3s ease;
 }
 
 .preview.rtl ul,
@@ -623,7 +587,6 @@ body {
     border-left: 3px solid var(--border-color);
     background: var(--bg-secondary);
     color: var(--text-secondary);
-    transition: background-color 0.3s ease;
 }
 
 .preview.rtl blockquote {
@@ -650,7 +613,6 @@ body {
     background: var(--bg-tertiary);
     border-radius: var(--radius-md);
     overflow-x: auto;
-    transition: background-color 0.3s ease;
 }
 
 [data-theme="dark"] .preview pre {
@@ -666,7 +628,6 @@ body {
     width: 100%;
     margin: 1em 0;
     border-collapse: collapse;
-    transition: background-color 0.3s ease;
 }
 
 .preview table th,
